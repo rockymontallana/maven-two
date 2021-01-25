@@ -5,7 +5,7 @@ public class FileIOService {
 
     public List<String> readFile(String fileName) throws IOException{
         List<String> fileContent = new ArrayList<String>();
-        String filePath = "C:/Users/Rocky/Desktop/mavenExercise/exercise-two/data/" + fileName;
+        String filePath = "C:/Users/Rocky/Desktop/maven-two/data/" + fileName;
         Scanner fileInput = new Scanner(new File(filePath));
 		
 		fileContent.clear();
@@ -24,7 +24,7 @@ public class FileIOService {
     }
 	
 	public void writeFile(String newFileContent) throws IOException{
-		FileWriter writer  = new FileWriter("C:/Users/Rocky/Desktop/mavenExercise/exercise-two/data/newFile.txt");
+		FileWriter writer  = new FileWriter("C:/Users/Rocky/Desktop/maven-two/data/newFile.txt");
 		
 		writer.write(newFileContent);
 		writer.close();

@@ -10,17 +10,10 @@
   </parent>
     
   <artifactId>app</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <name>app</name>
-  
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.assembly.plugin.version>2.4</maven.assembly.plugin.version>
-    <version>1.0-SNAPSHOT</version>
-  </properties>
-    
-  <build>  
-  <plugins>
+
+  <build> 
+    <plugins>
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -30,28 +23,12 @@
             <id>default-jar</id>
             <phase>none</phase>
         </execution>
-    </executions>
+        </executions>
     </plugin>
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-    </plugin>
-  </plugins>
-    <pluginManagement>
-    <plugins>
     <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>3.3.0</version>
         <configuration>
-          <modules>
-            <module>
-                <groupId>com.maven2</groupId>
-                <artifactId>service</artifactId>
-                <uri>service-1.0-SNAPSHOT.jar</uri>
-                <!-- Set custom context root -->
-                <contextRoot>/application</contextRoot>
-            </module>
-        </modules>
           <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
@@ -65,25 +42,17 @@
         </configuration>
         <executions>
           <execution>
-            <phase>package</phase> <!-- bind to the packaging phase -->
+            <phase>package</phase>
             <goals>
               <goal>single</goal>
             </goals>
           </execution>
         </executions>
       </plugin>
-
     </plugins>
-    </pluginManagement>
     </build>
     
     <dependencies>
-        <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>3.8.1</version>
-          <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>com.maven2</groupId>
             <artifactId>service</artifactId>
